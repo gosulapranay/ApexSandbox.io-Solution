@@ -2,11 +2,11 @@ public String registerStudent(String name, String phone, String email) {
     try {
         apxio__Student__c studnet = new apxio__Student__c  (
             Name = name,
-            apxio__Phone__c   = phone,
-            apxio__Email__c   = email
+            apxio__Phone__c = phone,
+            apxio__Email__c = email
         );
         insert studnet;
-        return studnet.apxio__Registration_Number__c ;
+        return [SELECT apxio__Registration_Number__c FROM apxio__Student__c WHERE Id = studnet.Id] ;
     } catch (DmlException e) {
         System.debug('Error inserting studnet: ' + e.getMessage());
         return null; 
