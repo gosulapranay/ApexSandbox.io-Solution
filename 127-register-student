@@ -6,7 +6,7 @@ public String registerStudent(String name, String phone, String email) {
             apxio__Email__c = email
         );
         insert student;
-        studentRec = [SELECT apxio__Registration_Number__c FROM apxio__Student__c WHERE Id =: studnet.Id LIMIT 1] ;
+        studentRec = [SELECT apxio__Registration_Number__c FROM apxio__Student__c WHERE Id = :student.Id LIMIT 1] ;
         return studentRec.apxio__Registration_Number__c;
     } catch (DmlException e) {
         System.debug('Error inserting student: ' + e.getMessage());
