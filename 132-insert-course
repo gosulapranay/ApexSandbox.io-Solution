@@ -8,7 +8,7 @@ public Id insertCourse(String name, String details, Integer credits) {
         insert course;
         return course.Id;
     } catch (DmlException e) {
-        System.debug('Error inserting student: ' + e.getMessage());
+        System.debug('Error inserting course: ' + e.getMessage());
         return null; 
     }
 }
