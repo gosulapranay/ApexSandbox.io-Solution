@@ -1,6 +1,6 @@
 public void createCourseAndClass(String name, String description) {
      try {
-        String safeDescription = (description != null) ? description : null;
+        String safeDescription = (description != null) ? description : 'No Description Provided';
 
         apxio__Course__c  course = new apxio__Course__c (
             Name = name,
