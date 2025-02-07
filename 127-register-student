@@ -1,14 +1,15 @@
 public String registerStudent(String name, String phone, String email) {
     try {
-        apxio__Student__c studnet = new apxio__Student__c  (
+        apxio__Student__c student = new apxio__Student__c  (
             Name = name,
             apxio__Phone__c = phone,
             apxio__Email__c = email
         );
-        insert studnet;
-        return [SELECT apxio__Registration_Number__c FROM apxio__Student__c WHERE Id = studnet.Id] ;
+        insert student;
+        studentRec = [SELECT apxio__Registration_Number__c FROM apxio__Student__c WHERE Id =: studnet.Id LIMIT 1] ;
+        return studentRec.apxio__Registration_Number__c;
     } catch (DmlException e) {
-        System.debug('Error inserting studnet: ' + e.getMessage());
+        System.debug('Error inserting student: ' + e.getMessage());
         return null; 
     }
 }
