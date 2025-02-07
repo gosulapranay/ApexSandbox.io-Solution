@@ -1,15 +1,14 @@
 public void createCourseAndClass(String name, String description) {
      try {
-        String safeDescription = (description != null) ? description : 'No Description Provided';
-
         apxio__Course__c  course = new apxio__Course__c (
             Name = name,
-            apxio__Course_Details__c  = safeDescription
+            apxio__Course_Details__c  = description
         );
         insert course;
+
         apxio__Class__c   aclass = new apxio__Class__c  (
             Name = name,
-            apxio__Description__c  = safeDescription.substring(0, Math.min(255, description.length())),
+            apxio__Description__c  = (description != null) ? description.substring(0, Math.min(255, description.length())) : null,
             apxio__Course__c = course.Id
         );
         insert aclass;
