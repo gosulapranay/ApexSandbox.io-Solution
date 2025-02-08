@@ -10,7 +10,7 @@ public Boolean isKeyAccount(Account a) {
             return a.AnnualRevenue == 2000000;
         }
         when else {
-            return a.AnnualRevenue == 5000000; 
+            return a.AnnualRevenue == 500000; 
         }
     }
 }
