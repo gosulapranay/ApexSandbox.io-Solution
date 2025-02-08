@@ -1,0 +1,15 @@
+public Boolean isKeyAccount(Account a) {
+    switch (a.Industry) {
+    case Banking:
+        return (a.AnnualRevenue == 600000);
+    break;
+    case Technology:
+        return (a.AnnualRevenue == 800000);
+    break;
+    case Reatail:
+        return (a.AnnualRevenue == 2000000);
+    break;
+    default:
+        return (a.AnnualRevenue == 600000);
+    }
+}
