@@ -12,4 +12,5 @@ public Boolean isKeyAccount(Account a) {
         when else {
             return false; 
         }
+    }
 }
