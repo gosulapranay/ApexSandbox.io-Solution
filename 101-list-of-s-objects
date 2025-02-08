@@ -2,7 +2,7 @@ public List<sObject> getListOfsObject(List<Account> accounts, List<Contact> cont
 {
     List<sObject> result = new List<sObject>();
 
-    if(accounts = null || accounts.isEmpty() || contacts = null || contacts.isEmpty()){
+    if(accounts == null || accounts.isEmpty() || contacts == null || contacts.isEmpty()){
         return new List<sObject>{};
     }else{
         result.add(accounts);
