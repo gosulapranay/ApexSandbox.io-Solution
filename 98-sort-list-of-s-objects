@@ -1,0 +1,56 @@
+public List<Account> getAccounts(List<Account> accounts) {
+    List<AccountWrapper> wrappedAccounts = new List<AccountWrapper>();
+
+    for(Account act : accounts){
+        wrappedAccounts.add(new AccountWrapper(act));
+    }
+    wrappedAccounts.sort();
+    
+    List<Account> sortedAccounts = new List<Account>();
+    for (AccountWrapper wrapper : wrappedAccounts) {
+        sortedAccounts.add(wrapper.acc);
+    }
+
+    return sortedAccounts;
+}
+public class AccountWrapper implements Comparable {
+
+    public Account acc;
+    
+    // Constructor
+    public AccountWrapper(Account ac) {
+    	// Guard against wrapping a null 
+    	if(ac == null) {
+    		Exception ex = new NullPointerException();
+    		ex.setMessage('Account argument cannot be null'); 
+    		throw ex;
+    	}
+        acc = ac;
+    }
+    
+    // Compare opportunities based on the Account AnnualRevenue.
+    public Integer compareTo(Object compareTo) {
+        // Cast argument to AccountWrapper
+        AccountWrapper compareToAcc = (AccountWrapper)compareTo;
+        
+        // The return value of 0 indicates that both elements are equal.
+        Integer returnValue = 0;
+        if ((acc.AnnualRevenue == null) && (compareToAcc.acc.AnnualRevenue == null)) {
+            // both wrappers have null AnnualRevenues
+            returnValue = 0;
+        } else if ((acc.AnnualRevenue == null) && (compareToAcc.acc.AnnualRevenue != null)){
+            // nulls-first implementation
+            returnValue = -1;
+        } else if ((acc.AnnualRevenue != null) && (compareToAcc.acc.AnnualRevenue == null)){
+            // nulls-first implementation
+            returnValue = 1;
+        } else if (acc.AnnualRevenue > compareToAcc.acc.AnnualRevenue) {
+            // Set return value to a positive value.
+            returnValue = 1;
+        } else if (acc.AnnualRevenue < compareToAcc.acc.AnnualRevenue) {
+            // Set return value to a negative value.
+            returnValue = -1;
+        } 
+        return returnValue;
+    }
+}
