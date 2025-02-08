@@ -1,6 +1,6 @@
 public List<Account> getAccounts(List<Account> accounts) {
     List<AccountWrapper> wrappedAccounts = new List<AccountWrapper>();
-    if (accounts == null || accounts.isEmpty()) {
+    if (accounts == null ) {
         return null; 
     }
     for(Account act : accounts){
