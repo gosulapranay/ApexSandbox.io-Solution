@@ -1,11 +1,13 @@
 public List<Account> getAccounts(List<Account> accounts) {
     List<AccountWrapper> wrappedAccounts = new List<AccountWrapper>();
-
+    if (accounts == null || accounts.isEmpty()) {
+        return null; 
+    }
     for(Account act : accounts){
         wrappedAccounts.add(new AccountWrapper(act));
     }
     wrappedAccounts.sort();
-    
+
     List<Account> sortedAccounts = new List<Account>();
     for (AccountWrapper wrapper : wrappedAccounts) {
         sortedAccounts.add(wrapper.acc);
