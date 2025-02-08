@@ -42,16 +42,16 @@ public class AccountWrapper implements Comparable {
             returnValue = 0;
         } else if ((acc.AnnualRevenue == null) && (compareToAcc.acc.AnnualRevenue != null)){
             // nulls-first implementation
-            returnValue = -1;
+            returnValue = 1;
         } else if ((acc.AnnualRevenue != null) && (compareToAcc.acc.AnnualRevenue == null)){
             // nulls-first implementation
-            returnValue = 1;
+            returnValue = -1;
         } else if (acc.AnnualRevenue > compareToAcc.acc.AnnualRevenue) {
             // Set return value to a positive value.
-            returnValue = 1;
+            returnValue = -1;
         } else if (acc.AnnualRevenue < compareToAcc.acc.AnnualRevenue) {
             // Set return value to a negative value.
-            returnValue = -1;
+            returnValue = 1;
         } 
         return returnValue;
     }
