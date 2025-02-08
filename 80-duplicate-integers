@@ -1,10 +1,10 @@
 public Boolean containsDuplicates(List<Integer> nums) {
     Set<Integer> mySet = new Set<Integer>();
-    for(Integer i = 0 ; i < nums.Size() ; i++){
-        if(mySet.contains(nums[i])){
+    for(Integer num : nums){
+        if(mySet.contains(num)){
             return true;
         }else{
-            mySet.add(i);
+            mySet.add(num);
         }
     }
     return false;
