@@ -2,7 +2,7 @@ public Boolean containsDuplicates(List<Integer> nums) {
     Set<Integer> mySet = new Set<Integer>();
     for(Integer i = 0 ; i < nums.Size()-1 ; i++){
         if(mySet.contains(nums[i])){
-            return true
+            return true;
         }else{
             mySet.add(i);
         }
