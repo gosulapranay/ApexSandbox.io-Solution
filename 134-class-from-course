@@ -1,6 +1,6 @@
 public Id classFromCourse(String courseName) {
     apxio__Course__c course = [SELECT Id,Name FROM apxio__Course__c WHERE Name = :courseName];
-    if(course.Id){
+    if(course.Id != null){
         apxio__Class__c classrec = new apxio__Class__c(
             Name = courseName,
             apxio__Course__c = course.Id
