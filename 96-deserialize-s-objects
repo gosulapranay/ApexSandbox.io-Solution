@@ -1,3 +1,12 @@
 public List<Account> getAccountsFromJSONString(String inputJSON){
-    return JSON.deserialize(inputJSON, List<Account>.class);
+    if (String.isBlank(inputJSON)) {
+        return null;
+    }
+    
+    try {
+        return (List<Account>) JSON.deserialize(inputJSON, List<Account>.class);
+    } catch (System.JSONException e) {
+        System.debug('Error parsing JSON: ' + e.getMessage());
+        return null; 
+    }
 }
