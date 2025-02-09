@@ -1,10 +1,11 @@
 public String reverseWordsInASentence(String sentence){
-    if (String.isBlank(sentence)) {
-        return sentence; 
-    }
     
     List<String> words = sentence.split(' ');
-    words.reverse(); 
-    
-    return String.join(words, ' ');
+
+    List<String> reversedWords = new List<String>();
+    for (Integer i = words.size() - 1; i >= 0; i--) {
+        reversedWords.add(words[i]);
+    }
+
+    return String.join(reversedWords, ' ');
 }
