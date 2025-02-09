@@ -1,0 +1,14 @@
+public Integer secondLargest(List<Integer> numbers) {
+    Integer largestSeen = -2147483647;
+    Integer secondLargestSeen = -2147483647;
+
+    if(numbers.size() > 0){
+        for(Integer num : numbers){
+            if( num > largestSeen){
+                largestSeen = num ;
+                secondLargestSeen = largestSeen;
+            }
+        }
+    }
+    return secondLargestSeen;
+}
