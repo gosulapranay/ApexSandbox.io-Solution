@@ -1,10 +1,6 @@
 public String changeTimeFormat(String strTime) {
     List<String> timeParts = strTime.split(':');
     
-    if (timeParts.size() != 2) {
-        return 'Invalid time format';
-    }
-    
     Integer hours = Integer.valueOf(timeParts[0]);
     String minutes = timeParts[1];
     String period = 'AM'; 
@@ -17,6 +13,6 @@ public String changeTimeFormat(String strTime) {
         hours -= 12; 
         period = 'PM'; 
     }
-    
-    return hours + ':' + minutes + ' ' + period;
+    String formattedHours = hours < 10 ? '0' + hours : String.valueOf(hours);
+    return formattedHours + ':' + minutes + ' ' + period;
 }
