@@ -1,0 +1,9 @@
+public static Integer findLast(List<Integer> nums, Integer target) {
+   Integer index = -1;
+   for(Integer num : nums){
+       if( num == target){
+           index = nums.indexOf(num);
+       }
+   }
+    return index;
+}
