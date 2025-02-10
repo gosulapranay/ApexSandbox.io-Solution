@@ -1,0 +1,9 @@
+public Integer findTargetCount(List<Integer> nums, Integer target) {
+    Integer count = 0;
+    for(Integer num : nums){
+        if(target == num){
+            count += 1;
+        }
+    }
+    return count;
+}
