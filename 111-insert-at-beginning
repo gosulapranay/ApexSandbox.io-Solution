@@ -1,7 +1,3 @@
 public void insertAtStart(String cityName, List<String> cities) {
-    if (cities == null) {
-        return; 
-    }
-
     cities.add(0, cityName); 
 }
