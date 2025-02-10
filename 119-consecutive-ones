@@ -1,0 +1,16 @@
+public Integer maxConsecutiveOnes(Integer[] numbers) {
+
+    Integer maxCount = 0;
+    Integer currentCount = 0;
+
+    for (Integer num : numbers) {
+        if (num == 1) {
+            currentCount++;
+            maxCount = Math.max(maxCount, currentCount);
+        } else {
+            currentCount = 0;
+        }
+    }
+
+    return maxCount;
+}
