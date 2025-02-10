@@ -1,0 +1,17 @@
+public Boolean companionPlants(List<String> plants) {
+    for( Integer i = 0 ; i < plants.size() ; i++){
+        if (plants[i].equals('onions') && (plants[i+1].equals('carrots') || plants[i+1].equals('lettuce') || plants[i+1].equals('tomatoes'))) {
+            return true;
+        } else if (plants[i].equals('lettuce') && (plants[i+1].equals('cucumbers') || plants[i+1].equals('onions'))) {
+            return true;
+        } else if (plants[i].equals('cucumbers') && plants[i+1].equals('lettuce')) {
+            return true;
+        } else if (plants[i].equals('carrots') && plants[i+1].equals('onions')) {
+            return true;
+        } else if (plants[i].equals('tomatoes') && plants[i+1].equals('onions')) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+}
