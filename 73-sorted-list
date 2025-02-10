@@ -1,0 +1,19 @@
+public boolean isSorted(List<Integer> numbers) {
+    if (numbers == null || numbers.size() < 3) {
+        return true; 
+    }
+
+    Boolean isAscending = true;
+    Boolean isDescending = true;
+
+    for (Integer i = 1; i < numbers.size(); i++) {
+        if (numbers[i] < numbers[i - 1]) {
+            isAscending = false;
+        }
+        if (numbers[i] > numbers[i - 1]) {
+            isDescending = false;
+        }
+    }
+
+    return isAscending || isDescending; 
+}
