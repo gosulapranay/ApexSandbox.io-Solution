@@ -1,16 +1,22 @@
 public Boolean companionPlants(List<String> plants) {
-    for( Integer i = 0 ; i < plants.size() ; i++){
-        if (plants[i].equals('onions') && (plants[i+1].equals('carrots') || plants[i+1].equals('lettuce') || plants[i+1].equals('tomatoes'))) {
-            return true;
-        } else if (plants[i].equals('lettuce') && (plants[i+1].equals('cucumbers') || plants[i+1].equals('onions'))) {
-            return true;
-        } else if (plants[i].equals('cucumbers') && plants[i+1].equals('lettuce')) {
-            return true;
-        } else if (plants[i].equals('carrots') && plants[i+1].equals('onions')) {
-            return true;
-        } else if (plants[i].equals('tomatoes') && plants[i+1].equals('onions')) {
-            return true;
-        } 
+    if(plants.isEmpty()) Return true;
+    else if(plants.size()<2) Return false;
+
+    map<String,String> comPlants = new map<String,String>{
+        'onions'=>'lettuce',
+        'onions'=>'carrots',
+        'onions'=>'tomatoes',
+        'lettuce'=>'cucumbers',
+        'lettuce'=>'onions',
+        'cucumbers'=>'lettuce',
+        'carrots'=>'onions',
+        'tomatoes'=>'onions'
+    };
+
+    for(Integer i = 0 ; i < plants.size()-1 ; i++){
+        if(comPlants.get(plants[i]) != plants[i+1]){
+            Return false;
+        }
     }
-    return false;
+    Return True;
 }
