@@ -1,0 +1,9 @@
+public List<String> orgNames(List<String> adjectives, List<String> animals) {
+    List<String> myList = new List<String>();
+    for(String str : adjectives){
+        for(String anm : animals){
+            myList.add(str + '-' + anm);
+        }
+    }
+    return myList;
+}
